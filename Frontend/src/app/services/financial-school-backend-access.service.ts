@@ -1,16 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Class, Coin, Product, User, History } from 'src/entities.model';
+import { environment } from 'src/environments/environment';
 
-const BACKEND_URL = 'https://localhost:44390/api/';
-//const BACKEND_URL = 'http://bankeshet.azurewebsites.net/api/';
-
-const USERS = 'Users/';
-const CLASSES = 'Classes/';
-const PRODUCTS = 'Products/';
-const HISTORY = 'History/';
-const COINS = 'Coins/';
+const USERS = '/Users/';
+const CLASSES = '/Classes/';
+const PRODUCTS = '/Products/';
+const HISTORY = '/History/';
+const COINS = '/Coins/';
 
 @Injectable({
   providedIn: 'root',
@@ -22,67 +20,67 @@ export class FinancialSchoolBackendAccessService implements OnInit {
 
   //classes
   getClassById(classId: string): Observable<Class> {
-    return this.http.get<Class>(BACKEND_URL + CLASSES + classId);
+    return this.http.get<Class>(environment.apiUrl + CLASSES + classId);
   }
 
   getClasses(): Observable<Class[]> {
-    return this.http.get<Class[]>(BACKEND_URL + CLASSES);
+    return this.http.get<Class[]>(environment.apiUrl + CLASSES);
   }
 
   insertNewClass(newClass: Class) {
-    return this.http.post(BACKEND_URL + CLASSES, newClass);
+    return this.http.post(environment.apiUrl + CLASSES, newClass);
   }
 
   //users
   getUsers(): Observable<any> {
-    return this.http.get<User[]>(BACKEND_URL + USERS);
+    return this.http.get<User[]>(environment.apiUrl + USERS);
   }
 
   getUser(userId: string): Observable<any> {
-    return this.http.get<User>(BACKEND_URL + USERS + userId);
+    return this.http.get<User>(environment.apiUrl + USERS + userId);
   }
 
   insertNewUser(newUser: User): Observable<any> {
-    return this.http.post(BACKEND_URL + USERS, newUser);
+    return this.http.post(environment.apiUrl + USERS, newUser);
   }
 
   //coins
   getCoins(): Observable<any> {
-    return this.http.get<Coin[]>(BACKEND_URL + COINS);
+    return this.http.get<Coin[]>(environment.apiUrl + COINS);
   }
 
   getCoin(coinId: string): Observable<any> {
-    return this.http.get(BACKEND_URL + COINS + coinId);
+    return this.http.get(environment.apiUrl + COINS + coinId);
   }
 
   insertCoin(newCoin: Coin): Observable<any> {
-    return this.http.post(BACKEND_URL + COINS, newCoin);
+    return this.http.post(environment.apiUrl + COINS, newCoin);
   }
 
   updateCoin(coinId: string, newWorth: number): Observable<any> {
-    return this.http.put(BACKEND_URL + COINS + coinId + '/' + newWorth, null);
+    return this.http.put(environment.apiUrl + COINS + coinId + '/' + newWorth, null);
   }
 
   //products
   getProducts(): Observable<any> {
-    return this.http.get(BACKEND_URL + PRODUCTS);
+    return this.http.get(environment.apiUrl + PRODUCTS);
   }
 
   getProduct(productId: number): Observable<any> {
-    return this.http.get(BACKEND_URL + PRODUCTS + productId);
+    return this.http.get(environment.apiUrl + PRODUCTS + productId);
   }
 
   insertProducts(newProduct: Product): Observable<any> {
-    return this.http.post(BACKEND_URL + PRODUCTS, newProduct);
+    return this.http.post(environment.apiUrl + PRODUCTS, newProduct);
   }
 
   deleteProduct(productId: string): Observable<any> {
-    return this.http.delete(BACKEND_URL + PRODUCTS + productId);
+    return this.http.delete(environment.apiUrl + PRODUCTS + productId);
   }
 
   buyProduct(classId: string, productId: number)
   {
-    return this.http.get(BACKEND_URL + CLASSES + classId + '/' + productId);
+    return this.http.get(environment.apiUrl + CLASSES + classId + '/' + productId);
   }
 
   updateClassCurrency(classId: string, amount: number, title: string)
@@ -93,27 +91,27 @@ export class FinancialSchoolBackendAccessService implements OnInit {
       classId: classId,
       description: title
     }
-    return this.http.post(BACKEND_URL + CLASSES + "Update", body);
+    return this.http.post(environment.apiUrl + CLASSES + "Update", body);
   }
 
   //history
   getHistory(): Observable<any> {
-    return this.http.get(BACKEND_URL + HISTORY);
+    return this.http.get(environment.apiUrl + HISTORY);
   }
 
   getHistoryByClassId(classId: string): Observable<History[]> {
-    return this.http.get<History[]>(BACKEND_URL + HISTORY + classId);
+    return this.http.get<History[]>(environment.apiUrl + HISTORY + classId);
   }
 
   insertNewHistoryLine(historyLine: History): Observable<any> {
-    return this.http.post(BACKEND_URL + HISTORY, historyLine);
+    return this.http.post(environment.apiUrl + HISTORY, historyLine);
   }
 
   deleteHistoryLine(historyLineId: number): Observable<any> {
-    return this.http.delete(BACKEND_URL + HISTORY + historyLineId);
+    return this.http.delete(environment.apiUrl + HISTORY + historyLineId);
   }
 
   getRegistrationValidationValues(): Observable<any> {
-    return this.http.get(BACKEND_URL + USERS + 'Validation');
+    return this.http.get(environment.apiUrl + USERS + 'Validation');
   }
 }
