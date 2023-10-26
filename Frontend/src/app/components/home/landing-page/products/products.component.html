@@ -1,0 +1,51 @@
+<section id="more-features" class="section-bg">
+
+  <div class="quote-container">
+    <div class="right-part">
+      <img src="../../../../../assets/frontSections/Images/KidDraw.svg" />
+    </div>
+    <div class="left-part">
+      <img class="quote" src="../../../../../assets/frontSections/Images/ShlomoArtziQuote.png" />
+    </div>
+  </div>
+
+  <div class="section-header-container section-title" dir="rtl">
+    <img class="section-icon" src="../../../../../assets/frontSections/Icons/mall.svg">
+    <div class="section-text">קניון ההטבות</div>
+    <div class="new-item">
+      <div *ngIf="isLoggedIn$ | async" (click)="onNewProduct()" id="new"
+        class="btn-container login-button active-button-container flex">
+        <div class="text-container full-width centered buy-now-btn">הוספת הטבה</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="items-container" dir="rtl">
+    <div class="item" *ngFor="let product of products">
+
+      <div class="text-wrapper"><span>{{ product.title }} </span></div>
+      <img class="item-icon" src="../../../../../assets/frontSections/Icons/itemIcon.svg" />
+
+      <div class="price-row">
+        <div class="price-text">עלות ההטבה:</div>
+        <div class="price">{{ product.price }}
+          <img class="coin-icon" src="../../../../../assets/frontSections/Icons/bankeshetIcon.svg" />
+        </div>
+      </div>
+      <div class="flex-btn" *ngIf="isLoggedIn$ | async">
+        <div (click)="onBuyProduct(product)" id="shop"
+          class="btn-container login-button active-button-container col-10">
+          <div class="text-container full-width centered buy-now-btn">קנו עכשיו</div>
+        </div>
+        <div class="col-2 p-0 garbage" (click)="onRemoveProduct(product)">
+          <img src="../../../../../assets/frontSections/Icons/whiteGarbage.svg" />
+        </div>
+        <!-- <div (click)="onBuyProduct(product)"  class="btn-container login-button active-button-container col-2"> -->
+        <!-- <div class="text-container full-width centered buy-now-btn">
+          </div> -->
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+
+</section>

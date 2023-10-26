@@ -1,0 +1,97 @@
+:host {
+    --page-padding: 60px;
+    --active-red: #E96D5A;
+}
+
+@font-face {
+    font-family: 'main';
+    src: url('../../assets/mainFont/OpenSans-VariableFont.ttf') format('truetype');
+    /* Add more src lines for other font formats (e.g. woff, woff2, svg) */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'subtitle';
+    src: url('../../assets/mainFont/OpenSans_Condensed-Bold.ttf') format('truetype');
+    /* Add more src lines for other font formats (e.g. woff, woff2, svg) */
+    font-weight: normal;
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.login-button {
+    cursor: pointer;
+    display: flex;
+    width: fit-content;
+    padding: 16px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border-radius: 5px;
+    color: white;
+    background: var(--active-red);
+    border: 3px solid var(--active-red);
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: transparent;
+    border: 3px solid var(--active-red);
+    padding: 16px 32px;
+    color: var(--active-red);
+    transition: background-color 0.3s ease;
+}
+
+
+section {
+    /* padding-left: 30px;
+    padding-right: 30px; */
+}
+
+.section-text {
+    color: #335269;
+    text-align: right;
+    font-family: "main";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.36px;
+    margin-right: 70px;
+}
+
+.section-header-container {
+    display: flex;
+    position: relative;
+    margin-right: var(--page-padding);
+}
+
+.section-icon {
+    height: 45px;
+    width: 45px;
+    top: 0px;
+    position: absolute;
+    margin-left: 10px;
+}
+
+.items-container {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.btn-container {
+    font-family: "main";
+}
+
+.custom-dialog {
+    border: 2px solid #dbb65e !important;
+    border-radius: 5px;
+}

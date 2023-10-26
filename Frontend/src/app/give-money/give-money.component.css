@@ -1,0 +1,115 @@
+.hero-section {
+    position: relative;
+    height: 100vh;
+}
+
+@media (min-width: 767px) {
+    .form-container {
+        border-radius: 20px;
+        padding: 30px;
+        background-color: #ffffffe0;
+        z-index: 34;
+        position: absolute;
+        width: 60%;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .mobile-hero-img {
+        height: 100%;
+        position: absolute;
+        /* left: -40%; */
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    ::ng-deep.cdk-overlay-pane {
+        left: 0 !important;
+        min-width: 40% !important;
+        right: unset !important;
+
+    }
+
+    .form-container {
+        border-radius: 20px;
+        padding: 30px;
+        background-color: white;
+        z-index: 34;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+    }
+
+    .mobile-hero-img {
+        width: 197%;
+        position: absolute;
+        left: -40%;
+    }
+}
+
+h2 {
+    color: #335269;
+    font-family: "main";
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-align: center;
+}
+
+.example-full-width {
+    position: relative;
+}
+
+
+.action-button {
+    display: flex;
+    width: 100%;
+    padding: 16px 32px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    gap: 15px;
+    border-radius: 5px;
+    border: 3px solid var(--active-red);
+    transition: background-color 0.3s ease;
+}
+
+.active {
+    color: white;
+    background: var(--active-red);
+}
+
+.active:hover {
+    background-color: transparent;
+    color: var(--active-red);
+}
+
+.not-active {
+    background-color: transparent;
+    color: var(--active-red);
+}
+
+.disabled {
+    color: white !important;
+    background: rgba(233, 109, 90, 0.75) !important;
+    cursor: none !important;
+    border: none !important;
+}
+
+.not-active:hover {
+    color: white;
+    background: var(--active-red);
+}
+
+.btn-container {
+    gap: 5px;
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    flex-direction: column;
+}

@@ -1,0 +1,35 @@
+<section id="more-features" class="section-bg" dir="rtl">
+    <div class="section-header-container section-title">
+        <img class="section-icon dialog-icon" src="../../../../../../assets/frontSections/Icons/itemIcon.svg">
+        <div class="section-text">הוספת הטבה</div>
+    </div>
+
+    <div class="row p-0">
+        <div class="row"> 
+            <img class="input-icon" src="../../../assets/frontSections/Icons/popupIcons/HowMuchMoneyIcon.svg">
+            <p class="fit ">כמה כסף? (חובה)</p>
+        </div>
+        <input type="number" [(ngModel)]="update.amount" class="input-field small"
+            placeholder="הזן את הסכום הרצוי כאן...">
+    </div>
+    <div class="row p-0">
+        <div class="row">
+            <img class="input-icon" src="../../../assets/frontSections/Icons/popupIcons/TitleIcon.svg">
+            <p class="fit "> הזנת מהות (חובה) </p>
+        </div>
+        <input [(ngModel)]="update.title" class="input-field" placeholder="הקלד\י את מהות העדכון הכספי כאן...">
+    </div>
+
+    <div class="row p-0">
+        <div class="button-container right-button p-0">
+            <div (click)="onSaveClick()" class="btn-container action-button active">
+                <div class="text-container">הוסיפו הטבה</div>
+            </div>
+        </div>
+        <div class="button-container left-button p-0">
+            <div (click)="onCancelClick()" class="btn-container action-button not-active">
+                <div class="text-container">בעצם לא</div>
+            </div>
+        </div>
+    </div>
+</section>

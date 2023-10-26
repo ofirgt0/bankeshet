@@ -1,0 +1,53 @@
+<section class="hero-section" dir="rtl">
+    <img class="mobile-hero-img" src="../../assets/frontSections/Images/Hero-Image.png">
+    <div class="form-container">
+        <h2>מענק מיוחד</h2>
+        <form>
+            <mat-form-field class="example-full-width" style="width: 100%;">
+                <input matInput placeholder="הקלד את שמך" [(ngModel)]="formData.name" name="שם" required>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" style="width: 100%;">
+                <input type="number" matInput placeholder="סכום" [(ngModel)]="formData.amount" name="סכום" required>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" style="width: 50%;">
+                <mat-label>בחר שכבה</mat-label>
+                <mat-select [(ngModel)]="formData.grade" name="בחר שכבה">
+                    <mat-option *ngFor="let grade of classesGrade" [value]="grade.gradeId">
+                        {{ grade.viewGrade }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" style="width: 50%;">
+                <mat-label>בחר מספר כיתה</mat-label>
+                <mat-select [(ngModel)]="formData.classNumber" name="classNumber">
+                    <mat-option *ngFor="let classNumber of numbers" [value]="classNumber">
+                        {{ classNumber }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" style="width: 100%;">
+                <input matInput placeholder="סיבת העברה" [(ngModel)]="formData.reason" name="סיבת העברה" required>
+            </mat-form-field>
+            <div class="btn-container">
+                <div (click)="onClassSubmit()" class="btn-container action-button active"
+                [ngClass]="{'active': classValidation(), 'disabled':!classValidation() }">
+                    <div class="text-container" type="submit">שלח!</div>
+                </div>
+
+                <div (click)="onClassesSubmit()" class="btn-container action-button" 
+                    [ngClass]="{'active': classesValidation(), 'disabled':!classesValidation() }">
+                    <div class="text-container" type="submit">שלח לשכבה שנבחרה!</div>
+                </div>
+
+                <div (click)="onSchoolSubmit()" class="btn-container action-button" 
+                        [ngClass]="{'active': schoolValidation(), 'disabled':!schoolValidation() }">
+                    <div class="text-container" type="submit">שלח לכל בית הספר!</div>
+                </div>
+            </div> 
+        </form>
+    </div>
+</section>

@@ -1,0 +1,19 @@
+
+
+<div class="centered-container p-4" dir="rtl">
+    <p class="title">{{data.insuranceQuestion}}</p>
+    <p class="text">{{data.insuranceText}}</p>
+    <br>
+    <div class="row p-0 full-width">
+        <div class="button-container right-button p-0">
+            <div (click)="onSaveClick()" class="btn-container action-button active">
+                <div class="text-container">בטוח!</div>
+            </div>
+        </div>
+        <div class="button-container left-button p-0">
+            <div (click)="onCancelClick()" class="btn-container action-button not-active">
+                <div class="text-container">בעצם לא</div>
+            </div>
+        </div>
+    </div>
+</div>

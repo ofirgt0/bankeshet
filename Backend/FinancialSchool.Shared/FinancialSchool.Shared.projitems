@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>cf9db5d7-d539-48f0-9b89-a9de0c6d57e2</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>FinancialSchool.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)DbInitializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FinancialSchoolContext.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IClassesSqlProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ICoinsSqlProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IHistorySqlProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IProductsSqlProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IUsersSqlProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dal\Class.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dal\Coin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dal\History.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dal\Product.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dal\User.cs" />
+  </ItemGroup>
+</Project>

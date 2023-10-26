@@ -1,0 +1,74 @@
+.third-input {
+    width: 29.8%;
+    margin: 3px;
+}
+
+.half-input {
+    width: 30%;
+    margin: 3px;
+}
+
+.centered {
+    text-align: center;
+}
+
+/* 
+.custom-tab-group .mat-ink-bar {
+    transition-duration: 0.3s; 
+  }
+  
+  .custom-tab-group .mat-tab-label-active {
+    border-bottom: 2px solid #b63e12; 
+  } */
+
+.full-width {
+    width: 100% !important;
+}
+
+.font-main {
+    font-family: "main" !important;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.title {
+    font-weight: bolder;
+}
+
+.custom-tab-label .mat-tab-label {
+    font-family: "main" !important;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-item {
+    flex-grow: 1;
+}
+
+
+.login-button {
+    cursor: pointer;
+    display: flex;
+    width: fit-content;
+    padding: 16px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border-radius: 5px;
+    color: white;
+    background: #E96D5A !important;
+    border: 3px solid #E96D5A !important;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: transparent !important;
+    border: 3px solid #E96D5A !important;
+    padding: 16px 32px;
+    color: #E96D5A !important;
+    transition: background-color 0.3s ease;
+}

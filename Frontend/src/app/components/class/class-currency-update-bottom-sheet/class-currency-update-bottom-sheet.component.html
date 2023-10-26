@@ -1,0 +1,49 @@
+<!-- <button mat-raised-button color="primary" style="width: 50%; border-radius: 0;">הוסף 5</button>
+<button mat-raised-button color="warn" style="width: 50%; border-radius: 0;">הורד 5</button>
+<mat-form-field style="width:100%; text-align: right;" dir="rtl" >
+    <mat-label>סכום חופשי</mat-label>
+    <input matInput type="number">
+  </mat-form-field> -->
+  <div class="media align-items-lg-center flex-column flex-lg-row-reverse p-3">
+    <div class="media-body order-2 order-lg-4 centered">
+      <p class="dashboard-data-title">הפקדה</p>
+      <h4 style="margin: 0" dir="rtl">
+        <a style="font-size: 100%">
+          <mat-form-field class="twothird-input">
+            <mat-label>סיבת עדכון כספי</mat-label>
+            <input
+              matInput
+              placeholder="הקלד\י..."
+              [(ngModel)]="product.title"
+              type="text"
+            />
+          </mat-form-field>
+          <mat-form-field class="third-input">
+            <mat-label>הסכום בקשף</mat-label>
+            <input
+              matInput
+              placeholder="הקלד\י..."
+              [(ngModel)]="product.price"
+              type="number"
+            />
+          </mat-form-field>
+        </a>
+      </h4>
+      <a class="description" dir="rtl">
+        <mat-form-field style="width: 100%">
+          <mat-label>תיאור</mat-label>
+          <input
+            matInput
+            placeholder="הקלד\י..."
+            [(ngModel)]="product.description"
+            type="text"
+          />
+        </mat-form-field>
+      </a>
+      <div class="centered">
+        <button mat-mini-fab color="accent" (click)="onNewProduct()">
+          עדכן
+        </button>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,10 @@
+C:\Users\ofirg\source\repos\FinancialSchool.Lib\bin\Debug\netcoreapp3.1\FinancialSchool.Lib.deps.json
+C:\Users\ofirg\source\repos\FinancialSchool.Lib\bin\Debug\netcoreapp3.1\FinancialSchool.Lib.dll
+C:\Users\ofirg\source\repos\FinancialSchool.Lib\bin\Debug\netcoreapp3.1\FinancialSchool.Lib.pdb
+C:\Users\ofirg\source\repos\FinancialSchool.Lib\obj\Debug\netcoreapp3.1\FinancialSchool.Lib.csproj.AssemblyReference.cache
+C:\Users\ofirg\source\repos\FinancialSchool.Lib\obj\Debug\netcoreapp3.1\FinancialSchool.Lib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ofirg\source\repos\FinancialSchool.Lib\obj\Debug\netcoreapp3.1\FinancialSchool.Lib.AssemblyInfoInputs.cache
+C:\Users\ofirg\source\repos\FinancialSchool.Lib\obj\Debug\netcoreapp3.1\FinancialSchool.Lib.AssemblyInfo.cs
+C:\Users\ofirg\source\repos\FinancialSchool.Lib\obj\Debug\netcoreapp3.1\FinancialSchool.Lib.csproj.CoreCompileInputs.cache
+C:\Users\ofirg\source\repos\FinancialSchool.Lib\obj\Debug\netcoreapp3.1\FinancialSchool.Lib.dll
+C:\Users\ofirg\source\repos\FinancialSchool.Lib\obj\Debug\netcoreapp3.1\FinancialSchool.Lib.pdb

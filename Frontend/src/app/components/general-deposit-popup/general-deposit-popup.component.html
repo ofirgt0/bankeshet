@@ -1,0 +1,54 @@
+<section id="more-features" class="section-bg" dir="rtl">
+    <div class="section-header-container section-title">
+        <img class="section-icon dialog-icon" src="{{ popupIconPath }}">
+        <div class="section-text">{{ popupTitle }}</div>
+    </div>
+
+    <div class="row p-0">
+        <div class="row">
+            <img class="input-icon" src="../../../assets/frontSections/Icons/popupIcons/HowMuchMoneyIcon.svg">
+            <p class="fit ">כמה כסף? (חובה)</p>
+        </div>
+        <input type="number" [(ngModel)]="update.amount" class="input-field small"
+            placeholder="הזן את הסכום הרצוי כאן...">
+    </div>
+
+    <div class="row p-0" *ngIf="data.popupType != 1">
+        <div class="row">
+            <img class="input-icon" src="../../../assets/frontSections/Icons/popupIcons/TitleIcon.svg">
+            <p class="fit "> הזנת מהות (חובה) </p>
+        </div>
+        <mat-form-field color="#E96D5A" appearance="fill" class="custom-mat-option">
+            <mat-label>בחירה מהירה</mat-label>
+            <mat-select [(ngModel)]="update.reason">
+                <mat-option *ngFor="let option of options" [value]="option.description">
+                    {{option.shortcut}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <input [(ngModel)]="update.reason" class="input-field" placeholder="הקלד\י את מהות העדכון הכספי כאן...">
+    </div>
+
+
+    <div class="row p-0" *ngIf="data.popupType == 1">
+        <div class="row">
+            <img class="input-icon" src="../../../assets/frontSections/Icons/popupIcons/note.svg">
+            <p class="fit"> תשלום מס 10% מתוך ההכנסה החודשית</p>
+            <p class="fit"> {{data.currency}}</p>
+            <img class="input-icon" src="../../../assets/frontSections/Icons/bankeshetIcon.svg">
+        </div>
+    </div>
+
+    <div class="row p-0">
+        <div class="button-container right-button p-0">
+            <div (click)="onSaveClick()" class="btn-container action-button active">
+                <div class="text-container">עדכן</div>
+            </div>
+        </div>
+        <div class="button-container left-button p-0">
+            <div (click)="onCancelClick()" class="btn-container action-button not-active">
+                <div class="text-container">בטל</div>
+            </div>
+        </div>
+    </div>
+</section>

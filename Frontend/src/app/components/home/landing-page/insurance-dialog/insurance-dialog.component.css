@@ -1,0 +1,83 @@
+.button-container {
+    width: 50%;
+    display: flex;
+    cursor: pointer;
+    
+}
+
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.left-button {
+    justify-content: flex-end;
+}
+
+.right-button {
+    justify-content: flex-start;
+}
+
+.title {
+    color: #062841;
+    text-align: center;
+    font-family: "main";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: bolder;
+    line-height: normal;
+}
+
+.text {
+    color: #062841;
+    font-family: "main";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.action-button {
+    display: flex;
+    width: 70%;
+    padding: 8px 32px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    /* font-weight: bold; */
+    gap: 15px;
+    border-radius: 5px;
+    border: 3px solid #E96D5A;
+    transition: background-color 0.3s ease;
+}
+
+.active {
+    color: white;
+    background: var(--Accent-Color, #E96D5A);
+}
+
+.active:hover {
+    background-color: transparent;
+    color: #E96D5A;
+}
+
+.not-active {
+    background-color: transparent;
+    color: #E96D5A;
+}
+
+.not-active:hover {
+    color: white;
+    background: var(--Accent-Color, #E96D5A);
+}
+
+.p-0 {
+    font-family: "main";
+    padding: 0;
+}
+
+.full-width {
+    width: 100% !important;
+}

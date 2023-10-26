@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'body';
+    src: url('../assets/Heebo/Heebo.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+mat-typography html, body {
+    font-family: 'main' !important;
+    background: var(--Light-Grey, #F5F5F5) !important;
+    font-family: 'main';
+}
+
+.center {
+    margin: auto;
+    display: table;
+}
+
+.under-header {
+    /* background: var(--Light-Grey, #F5F5F5) !important;
+    height: 100vh;
+    padding: 100px; */
+}

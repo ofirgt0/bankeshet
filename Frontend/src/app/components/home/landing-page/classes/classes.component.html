@@ -1,0 +1,25 @@
+<section id="more-features" class="section-bg">
+
+  <div class="section-header-container section-title" dir="rtl">
+    <img class="section-icon" src="../../../../../assets/frontSections/Icons/Icons_Class.svg">
+    <div class="section-text">כיתות לימוד</div>
+  </div>
+
+  <div class="classes-container" dir="rtl">
+    <div *ngFor="let class of classes | keyvalue" class="class-column">
+      <div *ngFor="let className of class.value" routerLink="/class/{{className.id}}" class="box">
+        <div class="rectangle">
+          <div class="class-name">
+            כיתה {{ className?.displayName }}
+          </div>
+          
+          <div class="class-details-container">
+            <div class="placeholder"></div>
+            <!-- <img class="bankeshet-icon" src="../../../../../assets/frontSections/Icons/userIcon.svg" /> -->
+            <p class="teacher-name">מחנכת: {{className?.teacherDisplayName}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

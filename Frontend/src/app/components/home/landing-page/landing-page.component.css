@@ -1,0 +1,106 @@
+.icon {
+  width: auto;
+  height: 25px;
+  margin-left: 8px;
+}
+
+#arrow::after {
+  content: url('../../../../assets/frontSections/Icons/arrow.svg');
+  display: inline-block;
+  vertical-align: middle;
+  transition: content 0.3s ease;
+  margin-top: 1px;
+}
+
+#arrow:hover::after {
+  content: url('../../../../assets/frontSections/Icons/arrowHover.svg');
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 1px;
+  transition: content 0.3s ease;
+}
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+}
+
+.hero-img {
+  height: 100%;
+  position: absolute;
+}
+
+.hero-body {
+  padding: var(--page-padding);
+  padding-top: 100px;
+  height: 70%;
+  position: inherit;
+}
+
+.hero-footer {
+  padding-right: var(--page-padding);
+  height: 30%;
+  position: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.text-container {
+  font-family: "main";
+  font-weight: bolder;
+  font-size: large;
+}
+
+.main-header-container .main-header {
+  color: #335269;
+  text-align: right;
+  font-size: 80px;
+  font-style: normal;
+  font-family: "main";
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 0.8px;
+  margin-bottom: 10px;
+}
+
+.hero-subtitle {
+  color: #062841;
+  text-align: right;
+  font-family: "main";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 180%;
+  margin-bottom: 0px;
+}
+
+.hero-footer-title {
+  color: #335269;
+  text-align: right;
+  font-family: "main";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+.hero-footer-text {
+  color: #062841;
+  text-align: right;
+  font-family: "main";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.active-button-container {
+  margin-top: 5%;
+}
+
+#classes #exchange {
+  background: var(--Light-Grey, #F5F5F5);
+  box-shadow: 0px -4px 50px 0px rgba(0, 0, 0, 0.05);
+}

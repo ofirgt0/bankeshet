@@ -1,0 +1,145 @@
+<br>
+<br>
+<div class="container m-30 mb-5" dir="rtl">
+  <div class="row">
+    <div class="column col-8 p-0" >
+      <p class="main-title"> פרטי החשבון של כיתה {{ chosenClass?.displayName }}</p>
+      <p *ngIf="isLoggedIn$ | async" class="sub-title">פעולות לביצוע:</p>
+      <div *ngIf="isLoggedIn$ | async" class="action-buttons">
+        <button (click)="openDialog(1)" class="action-button">
+          <img src="../../../assets/frontSections/Icons/Icon_PayTax.svg" class="action-img" alt="">
+          <a>תשלום מס</a>
+        </button>
+        <button (click)="openDialog(2)" class="action-button">
+          <img src="../../../assets/frontSections/Icons/Icon_PayFine.svg" class="action-img" alt="">
+          <a>תשלום קנס</a>
+        </button>
+        <a href="/#product" class="action-button">
+          <img src="../../../assets/frontSections/Icons/mall.svg" class="action-img" alt="">
+          <a>רכישה בקניון</a>
+        </a>
+        <button (click)="openDialog(0)" class="action-button">
+          <img src="../../../assets/frontSections/Icons/Icon_Expenditure.svg" class="action-img" alt="">
+          <a>הפקדת קשף</a>
+        </button>
+      </div>
+    </div>
+
+    <div class="column left col-4 class-subtitle p-0">
+      <div class="currency-container">
+        <div class="currency-header">
+          <a>יתרה נוכחית</a>
+        </div>
+        <div class="currency-body">
+          <img src="../../../assets/frontSections/Icons/whiteBankeshetIcon.svg" class="bankeshet-icon">
+          <p class="class-subtitle-white">{{ counter }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-8 p-0">
+      <div class="chart-container">
+        <div class="chart-header class-subtitle">
+          <div class="col-7">
+            <span>
+              פירוט התנועות בחשבון
+            </span>
+          </div>
+          <div *ngIf="isLoggedIn$ | async" class="col-5 cancel centered-left" id="garbage" (click)="_deleteLastHistoryLine()">
+            <a class="last-action">
+              בטל פעולה אחרונה
+            </a>
+          </div>
+        </div>
+        <div class="chart-body history-body">
+          <div class="row p-1 row-separetor" *ngFor="let historyLine of classCurrencyHistory">
+            <div class="col-1 flex-center">
+              <p class="date-text">{{ getDatePartNumberByDateString(historyLine.date, 0) }}</p>
+              <p class="date-text small">{{months[getDatePartNumberByDateString(historyLine.date, 1)-1]}}</p>
+            </div>
+
+            <div class="col-9">
+              <p *ngIf="historyLine.transactionPrice > 0" class="bold">הכנסה</p>
+              <p *ngIf="historyLine.transactionPrice == 0" class="bold">ללא שינוי</p>
+              <p *ngIf="historyLine.transactionPrice < 0" class="bold">הוצאה</p>
+              {{historyLine.productTitle}}
+            </div>
+
+            <div class="col-2">
+              <div class="doughnut-value" dir="ltr"
+                [ngClass]="historyLine.transactionPrice < 0 ? 'negative' : 'positive'">
+                {{ historyLine.transactionPrice }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-4 p-05">
+      <div class="chart-container">
+        <div class="chart-header class-subtitle">
+          פירוט הוצאות והכנסות
+        </div>
+        <div class="chart-body">
+          <div class="col-7 doughnut-container">
+            <canvas id="doughnutChart"></canvas>
+            <!-- <div class="overlay-div">
+              <div class="positive doughnut-income">הכנסות</div>
+              <div class="negative doughnut-income">הוצאות</div>
+            </div> -->
+          </div>
+
+          <div class="col-5 column doughnut-value-container">
+            <div class="positive doughnut-value">{{ doughnutYearlyIncome }}+</div>
+            <div class="negative doughnut-value">{{ doughnutYearlyOutcome }}-</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="chart-container">
+      <div class="chart-header class-subtitle">
+        פעילות בחודש הנוכחי: {{ currentMonth }}
+      </div>
+
+      <div class="chart-body line-chart">
+        <canvas id="{{ this.chosenClass?.id }}" class="chart-canvas"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="chart-container">
+      <div class="chart-header class-subtitle">
+        סיכום הוצאות \ הכנסות לפי חודשים
+      </div>
+      <div class="chart-body">
+        <div class="col-3 doughnut-value-container">
+          <div class="flex">
+            <div class="positive line-value m-1">{{ barTotalYearlyIncome }}+</div>
+            <b class="class-subtitle">
+              סך הכנסות
+            </b>
+          </div>
+
+          <div class="flex">
+            <div class="negative line-value m-1">{{ barTotalYearlyOutcome }}-</div>
+            <b class="class-subtitle">
+              סך הוצאות
+            </b>
+          </div>
+          <!-- <div class="negative line-value">{{ barTotalYearlyOutcome }}-</div> -->
+        </div>
+        
+        <div class="line-chart col-9">
+          <canvas id="barChart" height="80%"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="header" dir="rtl">
+    <div class="header-logo">
+        <a href="/#">
+            <img class="logo" src="../../../../assets/frontSections/Images/logo.png" />
+        </a>
+    </div>
+
+    <div class="header-buttons">
+        <a class="btn-container" href="/#classes">
+            <img class="icon" src="../../../../assets/frontSections/Icons/Icons_Class.svg" />
+            <div class="text-container">כיתות לימוד</div>
+        </a>
+
+        <a class="btn-container" href="/#product">
+            <img class="icon" src="../../../../assets/frontSections/Icons/mall.svg" />
+            <div class="text-container">קניון ההטבות</div>
+        </a>
+
+        <a class="btn-container" *ngIf="(isLoggedIn$ | async)">
+            <img class="icon" src="../../../../assets/frontSections/Icons/Icon_TeacherLogin.svg" />
+            <div class="text-container">שלום, {{loggedInUserDisplayName}}</div>
+        </a>
+        
+        <img class="icon" *ngIf="(isLoggedIn$ | async)" src="../../../../assets/frontSections/Icons/separateLine.png" />
+
+        <div (click)="onLogout()" class="btn-container" *ngIf="(isLoggedIn$ | async)">
+            <img class="icon" src="../../../../assets/frontSections/Icons/logout.svg" />
+        </div>
+
+        <!-- <div id="login"  (click)="onLogout()" class="btn-container login-button">
+            <div class="text-container">התנתקות</div>
+        </div> -->
+
+        <div id="login" *ngIf="!(isLoggedIn$ | async)" (click)="onTeacherLogin()" class="btn-container login-button">
+            <div class="text-container">התחברות</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="tab-content custom-tab-label" dir="rtl">
+  <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start" class="custom-tab-group">
+      <mat-tab label="התחבר">
+        <form>
+          <div class="form-outline mb-4">
+            <input type="text" [(ngModel)]="loginUserName" name="loginId" class="form-control" dir="ltr" />
+            <label class="form-label" for="loginId">תעודת זהות</label>
+          </div>
+
+          <div class="form-outline mb-4">
+            <input type="password" [(ngModel)]="loginPassword" name="loginPassword" class="form-control" dir="ltr" />
+            <label class="form-label" for="loginPassword">סיסמא</label>
+          </div>
+
+          <div id="login" (click)="onLogin()" class="btn-container login-button full-width">
+            <div class="text-container font-main title">התחברות</div>
+          </div>
+        </form>
+      </mat-tab>
+
+      <mat-tab label="הרשם">
+        <form>
+          <div class="form-outline mb-4 centered flex-container">
+            <mat-form-field class="third-input flex-item">
+              <mat-label class="font-main">שם מלא</mat-label>
+              <input matInput placeholder="הקלד\י..." [(ngModel)]="registerData.displayName" type="text" />
+            </mat-form-field>
+
+            <mat-form-field class="third-input flex-item">
+              <mat-label class="font-main">תעודת זהות</mat-label>
+              <input matInput placeholder="הקלד\י..." [(ngModel)]="registerData.userName" type="text" />
+            </mat-form-field>
+
+            <mat-form-field class="third-input flex-item">
+              <mat-label class="font-main">סיסמא</mat-label>
+              <input matInput placeholder="הקלד\י..." [(ngModel)]="registerData.password" type="password" />
+            </mat-form-field>
+          </div>
+          <div class="form-outline mb-4 flex-container">
+            <mat-form-field appearance="fill" class="half-input flex-item">
+              <mat-label class="font-main">שכבה</mat-label>
+              <mat-select [(ngModel)]="classLevel">
+                <mat-option *ngFor="let class of classes" [value]="class.gradeId">
+                  {{ class.viewGrade }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="half-input flex-item">
+              <mat-label class="font-main">מספר כיתה</mat-label>
+              <mat-select [(ngModel)]="classNumber">
+                <mat-option *ngFor="let num of numbers" [value]="num">
+                  {{ num }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            
+            <mat-form-field appearance="fill" class="half-input flex-item">
+              <mat-label class="font-main">קוד רישום</mat-label>
+              <input matInput placeholder="הקלד\י..." [(ngModel)]="registerCode" type="password" />
+            </mat-form-field>
+          </div>
+          
+          <div id="login" (click)="onRegister()" class="btn-container login-button full-width">
+            <div class="text-container font-main title">הרשמה</div>
+          </div>
+        </form>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
