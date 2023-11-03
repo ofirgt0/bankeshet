@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iUhsaCaXh8QtohCEvC/oIQQ8tYPBft1bCbmwweN6DliQAdD4purfCo4pNSwevotLgqUJzNmA/7FvK8lfKTwMtg==",
+  "dgSpecHash": "rOz65U5bOylSMPsxi1awItRDIjNeQLAgFyWqrE3wifaGogStoZAU/E6uLGpkeQgZjEpj6HTt0mAWR2qhyYnrcw==",
   "success": true,
-  "projectFilePath": "D:\\Programming\\FinancialSchool\\Backend\\bankeshet6\\bankeshet6\\bankeshet6.csproj",
+  "projectFilePath": "D:\\Programming\\bankeshet\\Backend\\bankeshet6\\bankeshet6\\bankeshet6.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USER\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
